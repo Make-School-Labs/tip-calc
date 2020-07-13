@@ -241,11 +241,11 @@ const tip = document.getElementById('tip')
 
 // Define your function 
 function calculateTip() {
-	const billValue = bill.value
-	const tipValue = tip.value
-	const tipAmount = billValue * tipValue / 100
+  const billValue = bill.value
+  const tipValue = tip.value
+  const tipAmount = billValue * tipValue / 100
 
-	display.innerHTML = tipAmount
+  display.innerHTML = tipAmount
 }
 
 // Update the event listeners
