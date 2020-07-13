@@ -39,10 +39,10 @@ Default document structure.
 <html>
   <head>
     <title></title>
-	</head>
-	<body>
+  </head>
+  <body>
 
-	</body>
+  </body>
 </html>
 ```
 
@@ -50,15 +50,18 @@ Tags usually come in pairs with an opening and closing tag. The closing tag has 
 
 `<html>` and `</html>`
 
-Tags should never overlap. A tag within another tag should close before it's parent tag. 
+- `<html>` - opening tag
+- `</html>` - closing tag
+
+Tags should never overlap. A tag within another tag should close before it's parent tag.
 
 ```html
 <html> <body></body> </html> <!-- Good -->
 
-<html> <body> </html> </body><!-- Bad! -->
+<html> <body> </html> </body> <!-- Bad! -->
 ```
 
-Notice how the HTML, head, title, and body do not overlap. 
+Notice in your code the HTML, head, title, and body do not overlap. 
 
 ## Calculator markup
 
@@ -68,9 +71,9 @@ Add some markup for your application **inside the body tag**.
 
 ```html
 <main>
-	<div id="display">0.00</div>
-	<input id="bill" value="10.00">
-	<input id="tip" value="15">
+  <div id="display">0.00</div>
+  <input id="bill" value="10.00">
+  <input id="tip" value="15">
 </main>
 ```
 
@@ -86,15 +89,15 @@ Your tip calculator needs a heading. Add a new tag inside `<main>` at the top.
 
 `<h1>Tip Calculator</h1>`
 
-Check your work in the browser. 
+Check your work in the browser. Open `index.html` in the browser if you haven't already, or refresh the brwoser if you have. 
 
-**Attributes** 
+### Attributes 
 
-Think of attributes as options that are used to configure elements. You add them to tags. 
+Think of attributes as options that are used to configure elements. You add attributes to the opening tag. 
 
 Attributes follow a syntax of `name="value"`.
 
-Here you included the `id` and `value` attributes each with different values.
+Earlier you included the `id` and `value` attributes each with different values.
 
 Identify the attributes, their names, and values in the sample code above...
 
@@ -114,7 +117,7 @@ Stretch challenge: try adding these attributes:
 
 ## Add some JavaScript
 
-JavaScript is the brains of your application. Add JS to give your application life!
+JavaScript is the brains of your application. Add JS to bring your application to life!
 
 JavaScript can be written in the script tag or linked to a .js file.
 
@@ -140,7 +143,9 @@ const billInput = document.getElementById('bill')
 const tipInput = document.getElementById('tip')
 ```
 
-What happened here? You used `document.getElementById(id)` to create a reference to an element in the DOM. What you're doing is connecting your JS code with your HTML code. 
+What happened here? You used `document.getElementById(id)` to create a reference to an element in the DOM and you stored it in a variable. You won't be reassigning this value again so you used `const`. 
+
+What about `document.getElementById(id)`? You're using this to connect your JavaScript to the HTML. 
 
 Notice the id names here match the id attribute values on the tags you created earlier! 
 
@@ -148,11 +153,11 @@ Notice the id names here match the id attribute values on the tags you created e
 - `getElementById('bill')` - `<input id="bill" value="10.00">`
 - `getElementById('tip')` - `<input id="tip" value="15">`
 
-With these references, your JS code can access the HTML elements and get values from the inputs and set the content they display. 
+With these references, your JS code can access the HTML elements and get values from the inputs and set the content of the div. 
 
 ### Events
 
-Events are things that happen in your program. If you want your program to react to changes you probably need an action that is listening for those changes. 
+Events are things that happen in your program. If you want your program to react to changes you need an action to listen for those changes. 
 
 Events can come from the mouse, the keyboard, the browser, user input, and almost anywhere else.
 
@@ -178,17 +183,17 @@ function () {
 
 Find the function in `addEventListener` above. It's the code inside this function that will be run when an input event occurs. 
 
-**Calculate the Tip**
+### Calculate the Tip
 
 Now some code to calculate the tip amount:
 
 ```JS
 billInput.addEventListener('input', function() {
-	const billValue = billInput.value // 1
-	const tipValue = tipInput.value // 2
-	const tipAmount = billValue * tipValue / 100 // 3
+  const billValue = billInput.value // 1
+  const tipValue = tipInput.value   // 2
+  const tipAmount = billValue * tipValue / 100 // 3
 
-	display.innerHTML = tipAmount // 4
+  display.innerHTML = tipAmount // 4
 })
 ```
 
@@ -199,21 +204,21 @@ What happened here?
 - 3 - Calculate the tip amount 
 - 4 - Display the tip amount by setting the content of the display element
 
-Test your code. You should be able to see the tip calculated when you change the value in the bill input. 
+Test your code. You should be able to see the tip calculated when you change the value in the **bill input**. 
 
-## Challenge
+### Challenge
 
-Currently changing the bill amount will update the tip amount. Changing the tip percent will have no effect. 
+Currently changing the bill amount will update the tip amount. **Changing the tip percent will have no effect**. You're going to fix that! 
 
 Add an event to `tipInput`. This should look like the event added to the bill input. Then calculate the tip amount.
 
 ```JS 
 tipInput.addEventListener('input', function(e) {
- 
+  // ... your code here ...
 })
 ```
 
-When your done test your work. If things do not work open the Inspector in the browser and check the console for any error messages (pro tip: these usually include a line number.)
+When you're done test your work. If things do not work open the Inspector in the browser and check the console for any error messages (pro tip: these usually include a line number.)
 
 ## Functions
 
@@ -227,7 +232,7 @@ function myFunc() {
 }
 ```
 
-You created a function in each of the event listeners you created. 
+There is a function in each of the event listeners you created earlier. You can replace this with the name of a function you define. In this way you can reuse the block of code contained in that function. 
 
 ```js
 const display = document.getElementById('display')
@@ -251,11 +256,13 @@ tip.addEventListener('input', calculateTip)
 
 ## Challenges
 
-Google is a pretty interesting company. They make some pretty solid software products. Did you know they have a tip calculator? Google: Tip calculator. 
+Google is a pretty interesting company. They make some pretty solid software products. Did you know they have a tip calculator? Go to Google.com and search: Tip calculator. 
 
 Notice their tip calculator has a couple of extra features. It has a field for the number of people that are used to split the bill. Besides the bill, it displays the total per person. 
 
 Here are some challenges.
+
+Modify the structure of your document. To add a new input and display element. This should go inside the `<main>` tag.
 
 - Add a new input where we can input the number of people. Follow the pattern of the other inputs.
 	- `<input>`
@@ -264,12 +271,15 @@ Here are some challenges.
 - Add a new element to display the total per person. Follow the idea of the div id display. 
 	- `<div></div>`
 	- Add an id: `id="total"`
+
+Modify the JavaScript to work with these new elements. This will all go inside the `calculateTip()` function.  
+
 - You'll need a reference to the new input and div elements. Define some new variables to hold these references at the top of your script. You can follow the pattern of the existing references. 
 	- `const total = document.getElementById('total')`
 	- `const peopleInput = document.getElementById('people')`
 - In your `calculateTip()` function you'll need to get the value from the people input and use that to calculate the price per person. 
 
-You may notice that the amounts come out as strange numbers sometimes. For example: 
+You may have noticed that the amounts come out as strange numbers sometimes. For example: 
 
 - 1.23 * 15% = 0.1845
 - 11.88 * 15% = 1.7820000000000003
@@ -281,7 +291,11 @@ The first problem can be solved by rounding the answer to two decimal places. Tr
 
 `display.innerHTML = tipAmount.toFixed(2)`
 
-The `twoFixed()` method rounds a number to a fixed number of decimal places. The argument you supply the function (2 in the example) says how many decimal places. 
+The `toFixed()` method rounds a number to a fixed number of decimal places. The argument you supply the function (2 in the example) says how many decimal places. For example: 
+
+- `(1).toFixed(1)` 1.0
+- `(12).toFixed(3)` 12.000
+- `(3.145678).toFixed(3)` 3.146 
 
 ## CSS
 
@@ -291,9 +305,9 @@ Add a style tag to the head of the document:
 
 ```html
 <head>
-	<style>
-
-	</style>
+  <style>
+    /* Your styles here! */
+  </style>
 </head>
 ```
 
@@ -305,47 +319,56 @@ CSS works with selectors and properties. Each block of code starts with a select
 /* Element selectors (use the tag name) */
 
 body {
-	/* Applies to the body element */
+  /* Applies to the body element */
 }
 
 main {
-	/* Applies to main element */
+  /* Applies to main element */
 }
 
 /* ID selector (begins with #) */
 
 #display {
-	/* Applies to the element with id="display" */
+  /* Applies to the element with id="display" */
 }
 ```
 
-In any selector, you'll define properties and values that determine the appearance of the element the selector is describing. Here's an example: 
+In any selector, you'll define properties and values that determine the appearance of the element the selector is describing. 
+
+```CSS
+selector {
+  property: value
+  ...
+}
+```
+
+Here's a real example: 
 
 ```CSS
 body {
-	background-color: #eee;
-	height: 100%;
-	font-family: Helvetica;
+  background-color: #eee;
+  height: 100%;
+  font-family: Helvetica;
 }
 ```
 
-**Apply Styles**
+### Styling the tip calculator
 
-To put the tip calculator in the center of the page you have to make the height of the page fill the height of the browser window. 
+To put the tip calculator in the center of the page you have to make the height of the page fill the height of the browser window. HTML elements are only as tall as their content by default. You need the html and body elements be as tall as the page. 
 
 ```CSS
 html, body {
-	height: 100%;
+  height: 100%;
 }
 ```
 
-Flexbox arranges elements on an axis. The flex property only applies to the children of an element. Arrange the child of the body (main) in the center of the page with: 
+Flexbox arranges elements on an axis. The flex property is applied a parent to arrange it's children. The body has one child main. Put it in center with: 
 
 ```CSS
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 ```
 
@@ -353,8 +376,8 @@ You can use Flexbox to arrange the children of main (#display, #bill, #tip) with
 
 ```CSS
 main {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 ```
 
@@ -362,12 +385,12 @@ The inputs could use some styles. CSS has properties that set all the different 
 
 ```CSS
 input {
-	font-size: 1em;
-	padding: 0.5em;
-	border: 4px solid rgb(135, 194, 230);
-	box-shadow: inset 1px 1px 6px rgba(0,0,0,0.25);
-	border-radius: 6px;
-	margin: 0.5em;
+  font-size: 1em;
+  padding: 0.5em;
+  border: 4px solid rgb(135, 194, 230);
+  box-shadow: inset 1px 1px 6px rgba(0,0,0,0.25);
+  border-radius: 6px;
+  margin: 0.5em;
 }
 ```
 
@@ -379,8 +402,11 @@ Last, style the #display element.
 
 ```CSS
 #display {
-	font-size: 2em;
-	padding: 0.5em;
+  font-size: 2em;
+  padding: 0.5em;
 }
 ```
 
+### Challenges 
+
+That completes the tutorial but you should continue to improve the tutorial. Try changing the styles to make it uniquely your own design. 
