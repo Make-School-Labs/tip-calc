@@ -1,17 +1,24 @@
-# Calc 
+# Tip Calc 
 
-In this tutorial, you will create a tip calculator with HTML, CSS, and JS.
+In this tutorial, you will create a tip calculator with HTML, CSS, and JS. The overall goal is to get a picture of how HTML, CSS, and JavaScript work together to create web applications. 
+
+Here is a picture of what you will make: 
+
+![Tip Calc](tipcalc.gif)
 
 **Learning Objectives:**
 
+- Build web application with HTML, CSS, and JS
 - Use HTML to create documents
 - Use Attributes to configure elements
-- Use JavaScript
+- Use JavaScript to...
 	- Define variables 
 	- Reference DOM elements 
 	- Use Events to handle user input
 	- Write functions
-- Use CSS to style elements
+- Use CSS to...
+	- Control the appearance of elements
+	- arrange elements on the screen
 
 ## Getting Started 
 
@@ -30,8 +37,8 @@ Default document structure.
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-		<title></title>
+  <head>
+    <title></title>
 	</head>
 	<body>
 
