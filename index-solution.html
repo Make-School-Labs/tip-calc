@@ -62,9 +62,8 @@
 			const billInput = document.getElementById('bill')
 			const tipInput = document.getElementById('tip')
 
-			bill.addEventListener('input', calculateTip)
-
-			tip.addEventListener('input', calculateTip)
+			billInput.addEventListener('input', calculateTip)
+			tipInput.addEventListener('input', calculateTip)
 
 			function calculateTip() {
 				const billValue = billInput.value
