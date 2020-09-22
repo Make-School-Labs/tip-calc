@@ -62,15 +62,27 @@
 			const billInput = document.getElementById('bill')
 			const tipInput = document.getElementById('tip')
 
+			let bill = 10
+			let tip = 15
+
 			billInput.addEventListener('input', calculateTip)
 			tipInput.addEventListener('input', calculateTip)
 
 			function calculateTip() {
-				const billValue = billInput.value
-				const tipValue = tipInput.value
+				const billValue = parseFloat(billInput.value)
+				const tipValue = parseInt(tipInput.value)
+
+				if (isNaN(billValue)) {
+					console.log('Bill is not a number')
+				}
+
+				if (isNaN(tipValue)) {
+					console.log('Tip is not a number')
+				}
+
 				const tipAmount = billValue * tipValue / 100
 
-				display.innerHTML = tipAmount
+				display.innerHTML = tipAmount.toFixed(2)
 			}
 		</script>
 	</body>
